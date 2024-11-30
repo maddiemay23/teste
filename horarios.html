@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Horário - Padaria Alfazema</title>
+    
+    <link rel="stylesheet" href="site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-horarios"> 
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <!-- Logo -->
+        <div class="texto esquerda">
+            <img src="imagens/logo grande padaria.png" alt="Logo da Padaria Alfazema" class="logo">
+        </div>
+        
+       <!-- Menu Sanduíche (apenas em telas pequenas) -->
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        &#9776; <!-- Símbolo de menu sanduíche -->
+      </button>
+        
+        <nav class="nav" aria-label="Menu de navegação principal">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="horarios.html">Horários</a></li>
+                <li><a href="contato.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner-section">
+        <div class="banner-image">
+            <img src="imagens/ensemble-viennoiseries.jpg" alt="imagem de pães sortidos">
+        </div>
+        <div class="banner-text">
+            <h1>Nossos Horários</h1>
+            <p>Confira nossos horários e venha nos visitar! Será um prazer poder te receber na Padaria Alfazema.</p> 
+            <br>
+        </div>
+    </section>
+
+<main>
+    <section class="horarios-section">
+        <div class="horarios-content">
+            <div class="horario-text">
+               <h2>Horários</h2>
+                <p>Segunda a Sexta: 7h às 19h</p>
+                <p>Sábado: 8h às 16h</p>
+                <p>Domingo: 8h às 13h</p>
+                <h2>Endereço</h2>
+                <p>Av. D. Pedro II, 1423</p>
+                <p>Centro, Araraquara</p>
+            </div>
+            <div class="horário-image">
+                <img src="imagens/mesacafe.jpg" alt="Caneca de café sobre uma mesa">
+            </div>
+        </div>
+
+        <!-- Início do Mapa do Google -->
+        <section class="mapa-section">
+		
+            <h2>Como Chegar</h2>
+			<div class="iframe-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3704.5309414105295!2d-48.18716062489658!3d-21.79840758005056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8f3c35f6904d5%3A0x4f2a66ecbacd2dda!2sAv.%20Dom%20Pedro%20%E2%85%A1%2C%201433%20-%20Jardim%20do%20Carmo%2C%20Araraquara%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1732657587415!5m2!1spt-BR!2sbr" 
+			width="300" 
+			height="200" style="border:0;
+			" allowfullscreen="
+			" loading="lazy" 
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+
+        </section>
+        <!-- Fim do Mapa do Google -->
+
+    </section>    
+</main>
+
+<!-- Rodapé -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-item">
+            <h3>Endereço</h3>
+            <p>Av. D. Pedro II, 1423</p>
+            <p>Centro, Araraquara</p>
+        </div>
+        <div class="footer-item">
+            <h3>Contato</h3>
+            <p>Email: <a href="mailto:contato@padariaalfazema.com">contato@padariaalfazema.com</a></p>
+            <p>Telefone: <a href="tel:+551622376105">(16) 2237-6105</a></p>
+        </div>
+        <div class="footer-item">
+            <h3>Horários</h3>
+            <p>Segunda a Sexta: 7h às 19h</p>
+            <p>Sábado: 8h às 16h</p>
+            <p>Domingo: 8h às 13h</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    menuToggle.addEventListener("click", function () {
+        const isActive = menu.classList.toggle("active"); 
+        menuToggle.setAttribute("aria-expanded", isActive ? "true" : "false");
+
+        // Alterna o foco para o botão de menu quando ele for ativado
+        if (isActive) {
+            menuToggle.focus();
+        }
+    });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const menuItems = document.querySelectorAll('.menu li'); // Seleciona todos os itens de lista do menu
+    
+    menuItems.forEach(item => {
+        // Verifica se o href do link corresponde à URL da página atual
+        if (item.querySelector('a').href === window.location.href) {
+            item.classList.add('active'); // Adiciona a classe "active" no item <li> do menu
+        }
+    });
+});
+</script>
+
+</body>
+</html>
